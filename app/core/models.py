@@ -50,7 +50,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Recipe(models.Model):
     """ Recipe object. """
-    # 'on delete' will delete recipe with the deletion of the user.
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -62,4 +61,8 @@ class Recipe(models.Model):
     link = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
+        """ Return the recipe model title as recipe.
+        also it will display title as recipe instead of recipe-id,
+        which looks better and necessary.
+        """
         return self.title
