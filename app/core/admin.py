@@ -45,3 +45,4 @@ class UserAdmin(BaseUserAdmin):
 # we are adding overriding default models->User with our custom UserAdmin class
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Recipe)
+admin.site.register(models.Tag)
