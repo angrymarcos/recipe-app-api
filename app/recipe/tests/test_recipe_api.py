@@ -64,7 +64,9 @@ class PrivateRecipeApiTest(TestCase):
     """ Test authenticated API requests. """
     def setUp(self):
         self.client = APIClient()
-        self.user = create_user(email='testuser@example.com', password='testpassword123')
+        self.user = create_user(
+            email='testuser@example.com',
+            password='testpassword123')
         self.client.force_authenticate(self.user)
 
     def test_retrieve_recipes(self):
@@ -370,4 +372,3 @@ class PrivateRecipeApiTest(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(recipe.ingredients.count(), 0)
-
