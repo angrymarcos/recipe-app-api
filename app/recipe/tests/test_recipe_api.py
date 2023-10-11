@@ -397,7 +397,10 @@ class ImageUploadTests(TestCase):
         self.recipe = create_recipe(self.user)
 
     def tearDown(self):
-        """ Delete the uploaded image after running the test suit in the end. """
+        """
+        Delete the uploaded image after
+        running the test suit in the end.
+        """
         self.recipe.image.delete()
 
     def test_upload_image(self):
