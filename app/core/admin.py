@@ -32,12 +32,13 @@ class UserAdmin(BaseUserAdmin):
             'classes': ('wide',),
             'fields': (
                 'email',
-                'password',
+                'password1',
+                'password2',
                 'name',
                 'is_active',
                 'is_staff',
-                'is_superuser'
-            )
+                'is_superuser',
+            ),
         }),
     )
 
